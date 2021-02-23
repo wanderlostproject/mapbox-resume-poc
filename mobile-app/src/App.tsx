@@ -40,12 +40,18 @@ const MobileApp = () => {
         console.log('done deleting')
     }
 
+    const resumeDownload = async () => {
+        console.log('resuming')
+        const pack = await MapboxGL.offlineManager.getPack(packName);
+        await pack?.resume();
+        console.log('done resuming')
+    }
+
     const invalidateDownload = async () => {
         console.log('invalidating', (MapboxGL.offlineManager as any).invalidatePack)
         await (MapboxGL.offlineManager as any).invalidatePack(packName);
         console.log('done invalidating')
     }
-
 
     const clearAmbient = async () => {
         console.log('clearAmbient')
@@ -66,6 +72,7 @@ const MobileApp = () => {
             <Button title="Peek at Download" onPress={peekAtDownload} />
             <Button title="Delete" onPress={deleteDownload} />
             <Button title="Invalidate" onPress={invalidateDownload} />
+            <Button title="Resume" onPress={resumeDownload} />
             <Button title="Clear Ambient" onPress={clearAmbient} />
         </View>
     );
@@ -76,6 +83,7 @@ const styles = StyleSheet.create({
     container: {
         paddingLeft: 20,
         paddingRight: 20,
+        paddingTop: 50,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
