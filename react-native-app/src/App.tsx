@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
 import MapboxGL from '@react-native-mapbox-gl/maps';
 
-MapboxGL.setAccessToken('...');
+MapboxGL.setAccessToken('pk.eyJ1IjoiamhvZ3VldCIsImEiOiJja2p5ZTFrMmkwZGdmMnNsZm1reHhpeXV4In0.9ZsEgBDhhSCCkJS_p5Mkow');
 
 export const App = (): JSX.Element | null => (
     <MobileApp />
@@ -22,7 +22,7 @@ const MobileApp = () => {
 
         await MapboxGL.offlineManager.createPack({
             name: packName,
-            styleURL: `http://localhost:3000/styles.json`,
+            styleURL: `http://192.168.50.58:3000/styles.json`,
             minZoom: zoom,
             maxZoom: zoom,
             bounds: bounds as any,
