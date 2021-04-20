@@ -41,7 +41,6 @@
       0
     ],
     "zoom": 3,
-    "sprite": "mapbox://sprites/jhoguet/ckkr7vnpt9ckt17mt049fk0dh/eoxxli0ytjnv9mzysid06flq7",
     "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
     "layers": [
       {
@@ -10400,23 +10399,6 @@
         }
       },
       {
-        "id": "wanderlost-global-trails-layer",
-        "type": "line",
-        "metadata": {},
-        "source": "wanderlost-global-trails",
-        "source-layer": "default",
-        "layout": {},
-        "filter": [
-          "==",
-          "type",
-          "trail"
-        ],
-        "paint": {
-          "line-width": 5,
-          "line-color": "#00ff00"
-        }
-      },
-      {
         "id": "wanderlost-user-trails-layer",
         "type": "line",
         "metadata": {},
@@ -10431,153 +10413,6 @@
         "paint": {
           "line-width": 5,
           "line-color": "#ff0000"
-        }
-      },
-      {
-        "id": "wanderlost-user-trails-highlight-layer",
-        "type": "line",
-        "metadata": {},
-        "source": "wanderlost-user-non-trails",
-        "source-layer": "default",
-        "layout": {},
-        "filter": [
-          "==",
-          "type",
-          "trail-highlight"
-        ],
-        "paint": {
-          "line-width": 10,
-          "line-opacity": 0.5,
-          "line-color": [
-            "get",
-            "color"
-          ]
-        }
-      },
-      {
-        "id": "wanderlost-user-trails-waypoint-layer",
-        "type": "symbol",
-        "metadata": {},
-        "source": "wanderlost-user-non-trails",
-        "source-layer": "default",
-        "filter": [
-          "==",
-          "type",
-          "waypoint"
-        ],
-        "layout": {
-          "icon-image": [
-            "coalesce",
-            [
-              "image",
-              [
-                "concat",
-                [
-                  "get",
-                  "icon"
-                ],
-                "-",
-                [
-                  "get",
-                  "color"
-                ]
-              ]
-            ],
-            [
-              "image",
-              "marker-green"
-            ]
-          ],
-          "icon-size": 0.2,
-          "icon-offset": [
-            -20,
-            -64
-          ]
-        },
-        "paint": {}
-      },
-      {
-        "id": "wanderlost-user-trails-text-annotation-layer",
-        "type": "symbol",
-        "metadata": {},
-        "source": "wanderlost-user-non-trails",
-        "source-layer": "default",
-        "layout": {
-          "icon-image": "turning-circle-outline",
-          "icon-size": 0.1,
-          "icon-anchor": "right",
-          "text-field": [
-            "get",
-            "name"
-          ],
-          "text-anchor": "left",
-          "text-size": 10
-        },
-        "paint": {
-          "text-color": "#333"
-        },
-        "filter": [
-          "==",
-          "type",
-          "text-annotation"
-        ]
-      },
-      {
-        "id": "wanderlost-trip-routes-layer",
-        "type": "line",
-        "metadata": {},
-        "source": "wanderlost-trip-routes",
-        "source-layer": "default",
-        "filter": [
-          "==",
-          "type",
-          "route"
-        ],
-        "layout": {},
-        "paint": {
-          "line-width": 3,
-          "line-color": "#0000ff"
-        }
-      },
-      {
-        "id": "wanderlost-trip-routes-waypoint-layer",
-        "type": "symbol",
-        "metadata": {},
-        "source": "wanderlost-trip-routes",
-        "source-layer": "default",
-        "filter": [
-          "==",
-          "type",
-          "waypoint"
-        ],
-        "layout": {
-          "icon-image": [
-            "coalesce",
-            [
-              "image",
-              [
-                "concat",
-                [
-                  "get",
-                  "icon"
-                ],
-                "-",
-                [
-                  "get",
-                  "color"
-                ]
-              ]
-            ],
-            [
-              "image",
-              "marker-#7B64FF"
-            ]
-          ],
-          "icon-size": 0.2,
-          "icon-offset": [
-            -20,
-            -64
-          ]
         }
       }
     ],
