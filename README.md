@@ -25,10 +25,11 @@ Then run the mobile app from xcode:
 
 Then you will see a UI with a bunch of buttons.
 
+1. Click Reset so you're starting with a clean databasse
 1. Click Download
 > and observe many tile requests to your api (expected)
-2. Click Invalidate
+1. Click Invalidate
 > and observe message indicating that invalidate completed
 > but also observe no tiles were requested from the api (not expected)
-3. Click Resume
+1. Click Resume
 > again, observe no tiles were requested from the api (not expected)
