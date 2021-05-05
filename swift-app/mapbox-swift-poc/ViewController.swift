@@ -19,7 +19,8 @@ extension UIButton {
 class ViewController: UIViewController {
 
     let packName = "offline-test-pack";
-    let styleURL = URL(string: "http://localhost:3000/styles.json")
+    let styleURL = URL(string: "http://192.168.50.58:3000/styles.json")
+    var counter: Int = 1;
 
     var resetButton: UIButton = UIButton()
     var downloadButton: UIButton = UIButton()
@@ -52,7 +53,8 @@ class ViewController: UIViewController {
 
         let region = MGLTilePyramidOfflineRegion(styleURL: styleURL, bounds: bounds, fromZoomLevel: zoom, toZoomLevel: zoom)
 
-        let info = ["name": packName]
+        counter = counter + 1;
+        let info = ["name": "\(packName) \(counter)"]
         let context = try NSKeyedArchiver.archivedData(withRootObject: info, requiringSecureCoding: false)
         
         MGLOfflineStorage.shared.addPack(for: region, withContext: context) { (pack, error) in
